@@ -1,40 +1,48 @@
 <?php
 
-spl_autoload_register(function ($class){
-    $file = str_replace('\\', '/', $class) . '.php';
-    if(file_exists($file)) require $file;
+use src\utilisateurs\defaultUser;
+use src\connection\login;
+use src\connection\registrer;
+
+
+spl_autoload_register(function ($class) {
+    $baseDir = dirname(__DIR__) . '/';
+    $path = str_replace('\\', '/', $class) . '.php';
+    $file = $baseDir . $path;
+    if (file_exists($file)) {
+        require_once $file;
+    } else {
+        echo "Recherche échouée pour : " . $file;
+    }
 });
 
-require_once '../src/connection/login.php';
-require_once '../src/connection/registrer.php';
-require_once '../src/connection/user.php';
-
 try {
-    $db = new \PDO('mysql:host=localhost;dbname=utilisateurs;charset=utf8', 'root', '');
-} catch (\Exception $e) {
+    $db = new PDO('mysql:host=localhost;dbname=database;charset=utf8', 'root', '');
+} catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
 
 //code connection
 if(!empty($_POST['Lemail']) && $_POST['Lpassword']) {
-    $login = new \src\connection\login($db);
+    $login = new login($db);
     $login->connection($_POST['Lemail'], $_POST['Lpassword']);
 }
 
 //code d'enregistrement
 if(!empty($_POST['Rpseudo']) && !empty($_POST['Remail']) && !empty($_POST['Rpassword'])) {
     $registrer = new registrer($db);
-
-    $NewUser = new user();
+    $NewUser = new DefaultUser();
     $NewUser->setPseudo($_POST['Rpseudo']);
     $NewUser->setMail($_POST['Remail']);
     $NewUser->setPassword($_POST['Rpassword']);
     $NewUser->setRole("USER");
-
     $registrer->registrer($NewUser);
 }
 
 ?>
+
+<h1></h1>
+
 <div id="LOGIN">
     <h2>LOGIN</h2>
     <form method="POST">

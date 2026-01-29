@@ -1,5 +1,7 @@
 <?php
-$host = "mysql:host=localhost;dbname=utilisateurs;charset=utf8";
+
+
+$host = "mysql:host=localhost;dbname=database;charset=utf8";
 $user = "root";
 $password = "";
 

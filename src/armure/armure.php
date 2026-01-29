@@ -8,7 +8,6 @@ class Armure extends Produit {
 
 	protected $type;
 	protected $defense;
-	
 }
 
 

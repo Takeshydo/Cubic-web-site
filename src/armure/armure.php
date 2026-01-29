@@ -1,8 +1,8 @@
 <?php
 
-namespace CubicWeb\Site\Armure;
+namespace src\Armure;
 
-use CubicWeb\Site\Produit\Produit;
+use src\Produit\Produit;
 
 class Armure extends Produit {
 

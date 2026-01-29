@@ -1,8 +1,8 @@
 <?php 
 
-namespace CubicWeb\Site\Arme;
+namespace src\arme;
 
-use CubicWeb\Site\Arme\Arme;
+use src\Arme\Arme;
 
 
 class Épée_diam extends Arme {

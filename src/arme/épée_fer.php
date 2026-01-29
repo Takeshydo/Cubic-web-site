@@ -1,6 +1,6 @@
 <?php
-namespace CubicWeb\Site\Arme;
-use CubicWeb\Site\Arme\Arme;
+namespace src\arme;
+use src\Arme\Arme;
 
 
 class Épée_fer extends Arme {

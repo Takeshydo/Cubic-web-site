@@ -1,8 +1,8 @@
 <?php
 
-namespace CubicWeb\Site\grade;
+namespace src\grade;
 
-use CubicWeb\Site\Grade\Grade;
+use src\Grade\Grade;
 
 class General extends Grade {
 

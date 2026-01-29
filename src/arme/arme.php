@@ -1,7 +1,8 @@
 <?php
-namespace CubicWeb\Site\Arme;
+namespace src\arme;
 
-use CubicWeb\Site\Produit\Produit;
+use src\Produit\Produit;
+
 class Arme extends Produit {
 
 	protected $type;

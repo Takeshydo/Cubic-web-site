@@ -1,8 +1,8 @@
 <?php
 
-namespace CubicWeb\Site\Grade;
+namespace src\Grade;
 
-use CubicWeb\Site\Produit\Produit;
+use src\Produit\Produit;
 
 class Grade extends Produit {
 

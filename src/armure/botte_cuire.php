@@ -1,8 +1,8 @@
 <?php
 
-namespace CubicWeb\Site\Armure;
+namespace src\Armure;
 
-use CubicWeb\Site\Armure\Armure;
+use src\Armure\Armure;
 
 class Botte_cuire extends Armure {
 

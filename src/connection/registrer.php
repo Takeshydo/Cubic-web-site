@@ -1,7 +1,7 @@
 <?php
 namespace src\connection;
 
-use src\utilisateurs\DefaultUser;
+use src\utilisateurs\User;
 
 class registrer{
     private $db;
@@ -13,7 +13,7 @@ class registrer{
         $this->db = $db;
     }
 
-    public function registrer(DefaultUser $user){
+    public function registrer(User $user){
         $psswdHash = password_hash($user->getPassword(), PASSWORD_DEFAULT);
         $request = "INSERT INTO users(pseudo, email, password, role) VALUES (:pseudo, :email, :psswdHash, :role)";
         $stmt = $this->db->prepare($request);

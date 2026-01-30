@@ -1,8 +1,8 @@
 <?php
-
-use src\utilisateurs\defaultUser;
+use src\utilisateurs\User;
 use src\connection\login;
 use src\connection\registrer;
+use src\produit\produitmanager;
 
 
 spl_autoload_register(function ($class) {
@@ -15,12 +15,14 @@ spl_autoload_register(function ($class) {
         echo "Recherche échouée pour : " . $file;
     }
 });
-
 try {
     $db = new PDO('mysql:host=localhost;dbname=database;charset=utf8', 'root', '');
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
+
+$manager = new produitmanager($db);
+$productAll =$manager->getAll();
 
 //code connection
 if(!empty($_POST['Lemail']) && $_POST['Lpassword']) {
@@ -31,11 +33,11 @@ if(!empty($_POST['Lemail']) && $_POST['Lpassword']) {
 //code d'enregistrement
 if(!empty($_POST['Rpseudo']) && !empty($_POST['Remail']) && !empty($_POST['Rpassword'])) {
     $registrer = new registrer($db);
-    $NewUser = new DefaultUser();
+    $NewUser = new User();
     $NewUser->setPseudo($_POST['Rpseudo']);
     $NewUser->setMail($_POST['Remail']);
     $NewUser->setPassword($_POST['Rpassword']);
-    $NewUser->setRole("USER");
+    $NewUser->setRole("ROLE_USER");
     $registrer->registrer($NewUser);
 }
 
@@ -62,4 +64,17 @@ if(!empty($_POST['Rpseudo']) && !empty($_POST['Remail']) && !empty($_POST['Rpass
         <input type="password" name="Rpassword" placeholder="Entrez votre mot de passe" required>
         <button type="submit">Enregistrement</button>
     </form>
+</div>
+
+
+
+<div>
+    <h2> BOUTIQUE</h2>
+        <?php foreach ($productAll as $product) { ?>
+            <div><img src="<?= $product->getImage()?>" alt="Image du produit"/></div>
+            <div><h4>Nom : </h4><p><?= htmlspecialchars($product->getNom()) ?> </p></div><br>
+            <div><h4>Prix : </h4><p><?= htmlspecialchars($product->getPrix())?></p></div><br>
+            <div><h4>Description : </h4><?=htmlspecialchars($product->getDescription()) ?></div><br>
+            <br>
+        <?php } ?>
 </div>

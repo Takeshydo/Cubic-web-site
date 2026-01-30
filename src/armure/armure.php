@@ -1,10 +1,10 @@
 <?php
 
-namespace src\Armure;
+namespace src\armure;
 
 use src\Produit\Produit;
 
-class Armure extends Produit {
+class armure extends Produit {
 
 	protected $type;
 	protected $defense;

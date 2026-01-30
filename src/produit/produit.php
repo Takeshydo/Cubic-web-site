@@ -10,6 +10,7 @@ class Produit {
 	protected $description;
 	protected $prix;
 	protected $image;
+    protected $element;
 
 	//get
 	public function getId() {
@@ -31,6 +32,9 @@ class Produit {
 	public function getImage() {
 		return $this->image;
 	}
+    public function getElement(){
+        return $this->element;
+    }
 
 	//set 
 	public function setId($id) {
@@ -52,6 +56,10 @@ class Produit {
 	public function setImage($image) {
 		$this->image = $image;
 	}
+
+    public function setElement($element) {
+     $this->element = $element;
+    }
 }
 
 

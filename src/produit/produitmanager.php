@@ -2,6 +2,9 @@
 
 namespace src\produit;
 
+use src\arme\arme;
+use src\armure\armure;
+
 class produitmanager {
 	private $produits;
 	private $db;
@@ -29,13 +32,26 @@ class produitmanager {
 
 		//boucle pour chaque tache
 		foreach ($data_all as $dataONE){
-			$produit = new Produit();
-			$produit->setId($dataONE['ID']);
-			$produit->setNom($dataONE['name']);
-			$produit->setDescription($dataONE['content']);
-			$produit->setPrix($dataONE['price']);
-			$produitAll[] = $produit;
-		}
+			if($dataONE['element'] === "arme"){
+				$produit= new arme();
+				$produit->setId($dataONE['ID']);
+				$produit->setNom($dataONE['name']);
+				$produit->setDescription($dataONE['content']);
+				$produit->setPrix($dataONE['price']);
+				$produit->setDamage($dataONE['damage']);
+				$produit->SetElement($dataONE['element']);
+				$produitAll[]=$produit;
+			}else{
+				 $produit = new armure();
+				 $produit->setId($dataONE['ID']);
+				 $produit->setNom($dataONE['name']);
+				 $produit->setDescription($dataONE['content']);
+				 $produit->setPrix($dataONE['price']);
+				 $produit->setDefense($dataONE['defense']);
+				 $produit->SetElement($dataONE['element']);
+				 $produitAll[] = $produit;}
+				}
+
 		return $produitAll;
 
 	}

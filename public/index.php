@@ -73,8 +73,16 @@ if(!empty($_POST['Rpseudo']) && !empty($_POST['Remail']) && !empty($_POST['Rpass
         <?php foreach ($productAll as $product) { ?>
             <div><img src="<?= $product->getImage()?>" alt="Image du produit"/></div>
             <div><h4>Nom : </h4><p><?= htmlspecialchars($product->getNom()) ?> </p></div><br>
+            <div>
+                <?php if($product->getElement() === "arme") {?>
+                        <h4>Damage : </h4><?= htmlspecialchars($product->getDamage()) ?>
+                <?php } else {?>
+                        <h4>Defense : </h4><?= htmlspecialchars($product->getDefense()) ?>
+                <?php } ?>
+            </div>
             <div><h4>Prix : </h4><p><?= htmlspecialchars($product->getPrix())?></p></div><br>
             <div><h4>Description : </h4><?=htmlspecialchars($product->getDescription()) ?></div><br>
+
             <br>
         <?php } ?>
 </div>

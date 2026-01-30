@@ -1,12 +1,13 @@
 <?php
-use src\utilisateurs\User;
-use src\connection\login;
-use src\connection\registrer;
-use src\produit\produitmanager;
+
+use web\src\connection\login;
+use web\src\connection\registrer;
+use web\src\produit\produitmanager;
+use web\src\utilisateurs\User;
 
 
 spl_autoload_register(function ($class) {
-    $baseDir = dirname(__DIR__) . '/';
+    $baseDir = dirname(__DIR__) . 'index.php/';
     $path = str_replace('\\', '/', $class) . '.php';
     $file = $baseDir . $path;
     if (file_exists($file)) {
@@ -82,7 +83,6 @@ if(!empty($_POST['Rpseudo']) && !empty($_POST['Remail']) && !empty($_POST['Rpass
             </div>
             <div><h4>Prix : </h4><p><?= htmlspecialchars($product->getPrix())?></p></div><br>
             <div><h4>Description : </h4><?=htmlspecialchars($product->getDescription()) ?></div><br>
-
             <br>
         <?php } ?>
 </div>

@@ -1,8 +1,8 @@
 <?php
 
-namespace src\armure;
+namespace web\src\armure;
 
-use src\Produit\Produit;
+use web\src\produit\Produit;
 
 class armure extends Produit {
 

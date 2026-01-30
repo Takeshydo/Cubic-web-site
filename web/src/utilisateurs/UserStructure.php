@@ -1,6 +1,6 @@
 <?php
 
-namespace src\utilisateurs;
+namespace web\src\utilisateurs;
 
 class UserStructure{
     private $id;

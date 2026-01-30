@@ -1,6 +1,5 @@
 <?php
-namespace src\arme;
-use src\Arme\Arme;
+namespace web\src\arme;
 
 
 class Épée_fer extends Arme {

@@ -1,7 +1,7 @@
 <?php
-namespace src\connection;
+namespace web\src\connection;
 
-use src\utilisateurs\User;
+use web\src\utilisateurs\User;
 
 class registrer{
     private $db;

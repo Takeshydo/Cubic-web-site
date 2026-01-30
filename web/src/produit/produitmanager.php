@@ -1,9 +1,9 @@
 <?php
 
-namespace src\produit;
+namespace web\src\produit;
 
-use src\arme\arme;
-use src\armure\armure;
+use web\src\arme\arme;
+use web\src\armure\armure;
 
 class produitmanager {
 	private $produits;

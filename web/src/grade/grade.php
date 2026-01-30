@@ -1,8 +1,8 @@
 <?php
 
-namespace src\Grade;
+namespace web\src\grade;
 
-use src\Produit\Produit;
+use web\src\produit\Produit;
 
 class Grade extends Produit {
 

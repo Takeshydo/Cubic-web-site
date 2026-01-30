@@ -1,5 +1,6 @@
 <?php
-namespace src\utilisateurs;
+namespace web\src\utilisateurs;
+
 class User extends UserStructure {
     /*Spécialité du User*/
 }

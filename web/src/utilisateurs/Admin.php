@@ -1,5 +1,6 @@
 <?php
-namespace src\utilisateurs;
+namespace web\src\utilisateurs;
+
 class Admin extends UserStructure {
 
 }

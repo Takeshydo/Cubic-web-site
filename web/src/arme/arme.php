@@ -1,7 +1,7 @@
 <?php
-namespace src\arme;
+namespace web\src\arme;
 
-use src\Produit\Produit;
+use web\src\produit\Produit;
 
 class arme extends Produit {
 

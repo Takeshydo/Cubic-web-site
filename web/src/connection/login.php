@@ -1,7 +1,7 @@
 <?php
-namespace src\connection;
-use src\utilisateurs\User;
-use src\utilisateurs\Admin;
+namespace web\src\connection;
+use web\src\utilisateurs\Admin;
+use web\src\utilisateurs\User;
 
 class login{
 

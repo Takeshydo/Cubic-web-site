@@ -1,8 +1,6 @@
 <?php
 
-namespace src\Armure;
-
-use src\Armure\Armure;
+namespace web\src\armure;
 
 class Plastron_fer extends Armure {
 

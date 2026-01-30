@@ -1,6 +1,6 @@
 <?php
 
-namespace src\Produit;
+namespace web\src\produit;
 
 class Produit {
 

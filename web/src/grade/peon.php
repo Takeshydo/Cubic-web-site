@@ -1,8 +1,6 @@
 <?php
 
-namespace src\grade;
-
-use src\Grade\Grade;
+namespace web\src\grade;
 
 class Peon extends Grade {
 
